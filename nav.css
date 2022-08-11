@@ -1,105 +1,144 @@
-* {
-    margin: 0px;
+body {
+    margin: 0;
 }
-
-.container {
-
-    background-color: #b72a67;
-    border: 3px solid black;
+.container{
+    display: flex;
     width: 100vw;
     height: 100vh;
-
+    background-color:  #b72a67;
 }
-
-.leftbar {
-
-    background-color: #8d2050;
+.navigation{
+    width: 230px;
     height: 100vh;
-    width: 250px;
-
+    background-color: #8d2050;
 }
-
-.threeBar {
-
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 20px;
-    transition: 1s;
-
-}
-
-.top {
-
-    width: 20px;
-    height: 5px;
-    background-color: white;
-    box-shadow: 0px 5px 50px 5px whitesmoke;
-    transition: 1s;
-
-}
-
-.mid {
-
-    width: 20px;
-    height: 5px;
-    background-color: white;
-    box-shadow: 0px 5px 50px 5px whitesmoke;
-    transition: 0.5s;
-
-}
-
-.bot {
-
-    width: 20px;
-    height: 5px;
-    background-color: white;
-    box-shadow: 0px 5px 50px 5px whitesmoke;
-    transition: 1s;
-
-}
-
-.names {
-
-    position: relative;
-    left: 70px;
-    display: flex;
-    flex-direction: column;
+.grid{
     gap: 20px;
+    margin-left: 100px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: grid;
+    width: 60vw;
+    height: 100vh;
+    grid-template-columns: 30% 20% 30%;
+    grid-template-rows: 30% 20% 20%;
 
 }
-
-.namuun {
-
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: 0.4s;
-    position: relative;
-    right: 20px;
-    transition-delay: 0.1s;
-
+.hamburger{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.bar{
+    margin: 10px auto;
+    height: 5px;
+    width: 35px;
+    background-color: #fff;
+    box-shadow: 0px 5px 50px 5px rgb(141, 140, 140);
+}
+.hamburger:hover .top{
+    transform: translateY(15px) rotateZ(45deg);
+}
+.hamburger:hover .middle{
+    width:0;
+}
+.hamburger:hover .bottom{
+    transform: translateY(-15px) rotateZ(-45deg);
+}
+.topBottomBordersOut div:before,
+.topBottomBordersOut div:after{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height:2px;
+    background-color: #fff;
+    content: '';
+    opacity: 0;
+    transition: all 0.3s;
+}
+.topBottomBordersOut div:before{
+    top: 0px;
+    transform: translateY(10px);
+}
+.topBottomBordersout div:after{
+    bottom:0px;
+    transform: translateY(-10px);
+}
+.hamburger:hover + .menu-container .menu-item-1{
+    animation: 1s ease-in-out item;
+}
+.hamburger:hover + .menu-container .menu-item-2{
+    animation: 2s ease-in-out item;
+}
+.hamburger:hover + .menu-container .menu-item-3{
+    animation: 3s ease-in-out item;
+}
+.menu-item{
+    color:#fff;
+    margin-left: 90px;
+    padding: 10px;
+}
+@keyframes item{
+    from{
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+#image{
+    width: 100%;
+    height: 100%;
+}
+.imgFirst{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+.imgSecond{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.imgThird{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+.imgFourth{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+.imgFifth{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+.imgSixth{
+    background-color: aqua;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+#image:hover{
+    animation: 0.5s photo;
+    box-shadow: 10px 10px 10px rgb(141, 209, 255);
+}
+@keyframes photo{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(-10px) translateY(-10px);
+    }
 }
 
-.dulguun {
-
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: 0.4s;
-    position: relative;
-    right: 20px;
-    transition-delay: 0.2s;
-
-}
-
-.chuka {
-
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: 0.4s;
-    position: relative;
-    right: 20px;
-    transition-delay: 0.3s;
-
-}
