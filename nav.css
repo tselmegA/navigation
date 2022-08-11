@@ -124,7 +124,6 @@ body {
     grid-row-end: 3;
 }
 .imgSixth{
-    background-color: aqua;
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 3;
@@ -132,14 +131,14 @@ body {
 }
 #image:hover{
     animation: 0.5s photo;
-    box-shadow: 10px 10px 10px rgb(141, 209, 255);
+    box-shadow: 5px 5px 5px rgb(176, 223, 255);
 }
 @keyframes photo{
     from{
         transform: translateX(0px);
     }
     to{
-        transform: translateX(-10px) translateY(-10px);
+        transform: translateX(-5px) translateY(-5px);
     }
 }
 
